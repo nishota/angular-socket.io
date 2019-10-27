@@ -6,7 +6,10 @@
     "outDir": "./dist",                        /* Redirect output structure to the directory. */
     "strict": true,                           /* Enable all strict type-checking options. */
     "esModuleInterop": true,
-    "removeComments": true,                 /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
+    "removeComments": true, 
+    "baseUrl": "./",
+    "paths": {"canvas": ["./node_modules/canvas/types/index.d.ts"]},
+    "typeRoots": ["types", "node_modules/@types","./node_modules/canvas/types/index.d.ts"],                /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
   },
   "include": ["./src/**/*"],
 }
