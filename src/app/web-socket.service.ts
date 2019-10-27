@@ -16,7 +16,7 @@ export class WebSocketService {
     this.socket = io(this.url, { query: queryString });
   }
 
-  emit(emitName: string, data?) {
+  emit(emitName: string, data?: any) {
     this.socket.emit(emitName, data);
   }
 
@@ -25,8 +25,6 @@ export class WebSocketService {
       this.socket.on(onName, (data) => {
         observer.next(data);
       });
-
-      return () => { this.socket.disconnect(); };
     });
     return observable;
   }
