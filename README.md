@@ -1,4 +1,14 @@
-# AngularSoketio
+# AngularSocketio
+## 実行手順メモ
+Angular実行環境、WebPack実行環境が必要です。
+### クライアントサイド
+1. `npm install`
+2. `ng serve --open`
+3. 別に開いたコンソールで`ng serve --port 4201 --open`
+
+### サーバサイド
+1. `npm install`
+2. `webpack --config webpack.config.js`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
 
