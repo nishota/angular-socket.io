@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class WebSocketService {
 
-  constructor() { }
+  constructor() {
+    this.connect('conect=Hi,ServerSide!');
+  }
 
   private url = 'http://localhost:5000';
   private socket;

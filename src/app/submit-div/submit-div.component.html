@@ -1,0 +1,26 @@
+<div class="sidebar" [ngStyle]="{'height': height}">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">@</span>
+      </div>
+      <input type="text" class="form-control" placeholder="username" aria-label="username" aria-describedby="basic-addon1" [formControl]="name">
+    </div>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="messages" aria-label="messages" aria-describedby="button-addon2"  [formControl]="text">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="onClick()">Submit</button>
+      </div>
+    </div>
+    <div>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of chat">
+              <div>
+                <span class="text">{{item.text}}</span>
+              </div>
+              <div>
+                <span class="item-info">{{item.name}} {{item.date}}</span>
+              </div>
+            </li>
+        </ul>
+    </div>
+</div>

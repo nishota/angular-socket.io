@@ -1,28 +1,14 @@
-<div>
-  <ul class="horizontal">
-    <li>
-        Name : 
-    </li>
-    <li>
-        <input type="text" [formControl]="name">
-    </li>
-  </ul>
-  <ul class="horizontal">
-    <li>
-      <input type="text" [formControl]="text">
-    </li>
-    <li>
-      <button (click)="onClick()">Click</button>
-    </li>
-  </ul>
-</div>
+<div class="container-fluid">
+  <app-top-nav></app-top-nav>
 
-<ul>
-  <li *ngFor="let item of chat">
-    {{item.text}} / {{item.date}}_{{item.name}}
-  </li>
-</ul>
-
-<div>
-  <canvas #myCanvas></canvas>
+  <!-- Sidebar -->
+  <div class="row">
+    <div class="col-4">
+      <app-submit-div></app-submit-div>
+    </div>
+    <!-- Page Content -->
+    <div class="col-8">
+      <app-canvas></app-canvas>
+    </div>
+  </div>   
 </div>
