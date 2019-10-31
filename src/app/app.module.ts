@@ -8,6 +8,8 @@ import { SubmitDivComponent } from './submit-div/submit-div.component';
 import { CanvasComponent } from './canvas/canvas.component';
 import { WebSocketService } from './web-socket.service';
 
+import { KonvaModule } from 'ng2-konva';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,8 @@ import { WebSocketService } from './web-socket.service';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    KonvaModule
   ],
   providers: [
     WebSocketService

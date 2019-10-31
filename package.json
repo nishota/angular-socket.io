@@ -21,6 +21,8 @@
     "@angular/router": "~8.2.11",
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
+    "konva": "^4.0.16",
+    "ng2-konva": "^6.0.0",
     "popper.js": "^1.16.0",
     "rxjs": "~6.4.0",
     "socket.io-client": "^2.3.0",

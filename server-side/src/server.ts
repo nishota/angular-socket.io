@@ -15,20 +15,15 @@ io.on('connection', (socket: socketio.Socket) => {
     const conect = query.conect;
     console.log(conect);
 
-    const ctx: CanvasRenderingContext2D = new Canvas(200, 200).getContext('2d');
-
     socket.on('disconnect', (data: any) => {
     });
 
     socket.on('message', (data: { text: string, name: string }) => {
         console.log(`${data.name} : ${data.text}`);
-
-        ctx.font = '30px';
-        ctx.rotate(0.1);
-        ctx.fillText(data.text, 50, 100);
-
-        io.emit('sync-data', { name: data.name, text: data.text, date: new Date() });
-        io.emit('sync-canvas', { font: '30px Impact', rotate: 0.1, text: {data: data.text, height: 50, width: 100} });
+        if (data.text.length > 0) {
+            io.emit('sync-data', { name: data.name, text: data.text, date: new Date() });
+            io.emit('sync-canvas', { text: { data: data.text, height: 50, width: 100 } });
+        }
     });
 });
 

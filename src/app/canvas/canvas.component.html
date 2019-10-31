@@ -1,3 +1,11 @@
-<div class="canvas-container" [ngStyle]="{'height': height}">
-    <canvas #myCanvas></canvas>
-</div>
+<section>
+    <ko-stage #stage [config]="confStage$">
+        <ko-layer #layer>
+            <ko-star *ngFor="let item of list"
+            [config]="item">
+            </ko-star>
+        </ko-layer>
+        <ko-layer #dragLayer></ko-layer>
+    </ko-stage>
+    <br>
+</section>
