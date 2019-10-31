@@ -38,9 +38,6 @@ export class CanvasComponent implements OnInit, AfterViewInit {
     // moving to another layer will improve dragging performance
     shape.moveTo(dragLayer);
     stage.draw();
-
-    ngComponent.config.next({
-    });
   }
 
   public handleDragend(ngComponent: KonvaComponent) {
@@ -50,14 +47,11 @@ export class CanvasComponent implements OnInit, AfterViewInit {
 
     shape.moveTo(layer);
     stage.draw();
-
-    shape.to({
-    });
   }
 
   ngOnInit(): void {
-    for (let n = 0; n < 30; n++) {
-      const scale = Math.random();
+    for (let n = 0; n < 20; n++) {
+      const scale = Math.random() + 0.5;
       this.list.push(
         new BehaviorSubject({
           x: Math.random() * this.width,
