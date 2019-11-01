@@ -20,6 +20,9 @@ export class CanvasComponent implements OnInit, AfterViewInit {
   public list: Array<any> = [];
   // confStageSource = new Subject<{ width: number, height: number }>();
   confStage$: Observable<{ width: number, height: number }>; // = this.confStageSource.asObservable();
+  shapes;
+  components:any[] = [];
+  
   constructor() {
     this.width = (3 * innerWidth) / 4;
     this.height = innerHeight - 56;
@@ -77,6 +80,10 @@ export class CanvasComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.shapes = layer.getStage().getChildren();
+    for (const shape of shapes){
+      this.components.push(shape.getStage());
+    }
     const anim = new Konva.Animation((frame: any) => {
       this.update(this.layer, frame);
     }, this.layer.getStage());
@@ -84,12 +91,12 @@ export class CanvasComponent implements OnInit, AfterViewInit {
   }
 
   update(layer: any, frame: any) {
-    const shapes = layer.getStage().getChildren();
+    
     const amp = 100;
     const period = 10000;
 
-    for (const component of shapes) {
-      component.getStage().setX(amp * Math.sin((frame.time * 2 * Math.PI) / period));
+    for (const component of this.components) {
+      component.setX(amp * Math.sin((frame.time * 2 * Math.PI) / period));
     }
   }
 }
