@@ -9,13 +9,15 @@ import { CanvasComponent } from './canvas/canvas.component';
 import { WebSocketService } from './web-socket.service';
 
 import { KonvaModule } from 'ng2-konva';
+import { TextBoxComponent } from './text-box/text-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopNavComponent,
     SubmitDivComponent,
-    CanvasComponent
+    CanvasComponent,
+    TextBoxComponent
   ],
   imports: [
     BrowserModule,

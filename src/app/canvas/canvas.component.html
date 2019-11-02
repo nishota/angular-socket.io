@@ -1,11 +1,3 @@
 <section>
-    <ko-stage #stage [config]="confStage$">
-        <ko-layer #layer>
-            <ko-star *ngFor="let item of list"
-            [config]="item">
-            </ko-star>
-        </ko-layer>
-        <ko-layer #dragLayer></ko-layer>
-    </ko-stage>
-    <br>
+    <app-text-box [textConfig$]="textConfig$" [stageConfig$]="stageConfig$"></app-text-box>
 </section>

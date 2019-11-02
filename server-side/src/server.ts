@@ -22,7 +22,7 @@ io.on('connection', (socket: socketio.Socket) => {
         console.log(`${data.name} : ${data.text}`);
         if (data.text.length > 0) {
             io.emit('sync-data', { name: data.name, text: data.text, date: new Date() });
-            io.emit('sync-canvas', { text: { data: data.text, height: 50, width: 100 } });
+            io.emit('sync-canvas', { text: data.text });
         }
     });
 });
